@@ -27,6 +27,8 @@ class Meal(models.Model):
     fat = models.FloatField()
     carbohydrate = models.FloatField()
     protein = models.FloatField()
+    offeredFood = models.BooleanField(default=False)
+    complete = models.BooleanField(default=False)
 
     def __str__(self):
         return self.foodName

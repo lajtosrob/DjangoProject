@@ -19,7 +19,7 @@
         table {
             margin-top: 50px;
         }
-        h1 {
+        .container h1 {
             font-size: 70px;
             color: blue;
             text-align: center;
@@ -29,14 +29,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>Étellista</h1>
+        <h1>Ajánlott ételek listája</h1>
         <table class="table table-dark table-striped">
 
             <tr><th>Étel neve</th><th>Kategória</th><th>kcal/100g</th><th>Zsír</th><th>Szénhidrát</th><th>Fehérje</th></tr>
 
             {% for meal in meals %}
-            
-            <tr><td>{{ meal.foodName }}</td><td>{{ meal.category }}</td><td>{{ meal.calories }}</td><td>{{ meal.fat }}</td><td>{{ meal.carbohydrate }}</td><td>{{ meal.protein }}</td></tr>
+
+                {% if meal.offeredFood %}
+                
+                    <tr><td>{{ meal.foodName }}</td><td>{{ meal.category }}</td><td>{{ meal.calories }}</td><td>{{ meal.fat }}</td><td>{{ meal.carbohydrate }}</td><td>{{ meal.protein }}</td></tr>
+                
+                {% endif %}
             
             {% endfor %}
         </table>        
